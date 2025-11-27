@@ -19,12 +19,15 @@ public class proyectil : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(gameObject, 5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.y < -10f)  // modificá el -10 según tu mapa
+        {
+            Destroy(gameObject);
+        }
     }
 }

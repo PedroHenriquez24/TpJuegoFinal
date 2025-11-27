@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class pistolaProyectiles : MonoBehaviour
 {
-    public Transform firePoint;        // punto desde donde sale el proyectil (la punta de la pistola)
+    public Transform firePoint; // punto desde donde sale el proyectil (la punta de la pistola)
     public GameObject proyectilPrefab; // prefab de la esfera
 
-    [SerializeField] float fuerzaProyectil;   // fuerza con la que sale el proyectil
+    [SerializeField] float fuerzaProyectil; //fuerza con la que sale el proyectil
 
     [SerializeField] ShotCounter shotCounter;
-    [SerializeField] ScoreCounter scoreCounter; 
+    [SerializeField] ScoreCounter scoreCounter;
 
     void Update()
     {
+        if (!enabled) return;//ESTO ES PARA QUE DISPARE SOLO SI LA EQUIPE
+
         if (Input.GetKeyDown(KeyCode.K))
         {
             Disparar();
         }
     }
+
 
     void Disparar()
     {
