@@ -9,10 +9,16 @@ public class ShotCounter : MonoBehaviour
     private int disparos = 0;              // Contador interno
 
     // Llamá a este método cada vez que la pistola dispara
+    public int GetDisparos()
+    {
+        return disparos;
+    }
+
     public void SumarDisparo()
     {
         disparos++;
         actualizarUI();
+        FindObjectOfType<FinalScore>().Refrescar();
     }
 
     void actualizarUI()

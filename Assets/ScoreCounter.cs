@@ -7,11 +7,16 @@ public class ScoreCounter : MonoBehaviour
 {
     public TextMeshProUGUI textoPuntaje;
     private int puntaje = 0;
+    public int GetPuntaje()
+    {
+        return puntaje;
+    }
 
     public void SumarPuntos(int puntos)
     {
         puntaje += puntos;
         actualizarUI();
+        FindObjectOfType<FinalScore>().Refrescar();
     }
 
     void actualizarUI()

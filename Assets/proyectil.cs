@@ -15,6 +15,27 @@ public class proyectil : MonoBehaviour
 
             Destroy(gameObject);
         }
+        if (collision.gameObject.name == "Objetivo 2")
+        {
+            if (scoreCounter != null)
+                scoreCounter.SumarPuntos(50);
+
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.name == "Objetivo 3")
+        {
+            if (scoreCounter != null)
+                scoreCounter.SumarPuntos(100);
+
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.name == "Objetivo 4")
+        {
+            if (scoreCounter != null)
+                scoreCounter.SumarPuntos(500);
+
+            Destroy(gameObject);
+        }
     }
     // Start is called before the first frame update
     void Start()
