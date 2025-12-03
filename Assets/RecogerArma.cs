@@ -8,7 +8,7 @@ public class RecogerArma : MonoBehaviour
     public LayerMask recogerLayer;      // Capa "Pickup" para la pistola en el piso
     public Transform mano;        // Donde se equipa la pistola (mano/cámara)
     public pistolaProyectiles scriptPistola;  // El script de disparos
-    private bool tengoPistola = false;
+    public bool tengoPistola = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,9 +48,5 @@ public class RecogerArma : MonoBehaviour
         gun.transform.SetParent(mano);
         gun.transform.localPosition = Vector3.zero;
         gun.transform.localRotation = Quaternion.identity;
-
-        //Activar el script de disparo
-        scriptPistola = gun.GetComponent<pistolaProyectiles>();
-        scriptPistola.enabled = true;
     }
 }

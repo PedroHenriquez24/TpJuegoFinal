@@ -6,15 +6,21 @@ public class pistolaProyectiles : MonoBehaviour
 {
     public Transform firePoint; // punto desde donde sale el proyectil (la punta de la pistola)
     public GameObject proyectilPrefab; // prefab de la esfera
+    private RecogerArma recogerArmaScript;
 
     [SerializeField] float fuerzaProyectil; //fuerza con la que sale el proyectil
 
     [SerializeField] ShotCounter shotCounter;
     [SerializeField] ScoreCounter scoreCounter;
 
+    void Start()
+    {
+        recogerArmaScript = FindObjectOfType<RecogerArma>();
+    }
+
     void Update()
     {
-        if (!enabled) return;//ESTO ES PARA QUE DISPARE SOLO SI LA EQUIPE
+        if (!recogerArmaScript.tengoPistola) return;
 
         if (Input.GetKeyDown(KeyCode.K))
         {
